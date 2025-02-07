@@ -1,9 +1,23 @@
 from fastapi import APIRouter
+from converter import async_converter
 
 
 router = APIRouter()
 
 
-@router.get('/converter')
-def converter():
-    return "It works!"
+@router.get('/converter/{from_currency}')
+async def converter(from_currency: str, to_currencies: str, price: float):
+    to_currencies = to_currencies.split(',')
+
+    result = []
+
+    for currency in to_currencies:
+        response = await async_converter(
+            from_currency=from_currency,
+            to_currency=currency,
+            price=price
+        )
+
+        result.append(response)
+    
+    return result
