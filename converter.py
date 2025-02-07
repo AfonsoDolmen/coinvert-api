@@ -1,6 +1,5 @@
 from os import getenv
 from fastapi import HTTPException
-import requests
 import aiohttp
 
 
