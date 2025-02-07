@@ -4,3 +4,8 @@ from routers import router
 
 app = FastAPI()
 app.include_router(router=router, tags=['Conversor'])
+
+if __name__ == '__main__':
+    import uvicorn
+
+    uvicorn.run('main:app', reload=True)
