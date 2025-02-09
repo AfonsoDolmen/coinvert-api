@@ -43,7 +43,7 @@ O Coinvert API é uma aplicação desenvolvida com FastAPI que permite a convers
     pip install -r requirements.txt
     ```
 
-4. Incie o servidor
+4. Inicie o servidor
     ```bash
     python .\main.py
     ```
